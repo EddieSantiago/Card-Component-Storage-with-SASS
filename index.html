@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main class="main-container">
+    <div class="dashboard">
+      <img src="images/logo.svg" alt="Logo" class="dashboard__logo">
+
+      <div class="dashboard__options">
+        <figure class="dashboard__options-container">
+          <img src="images/icon-document.svg" alt="Document" class="dashboard__options-container__img">
+        </figure>
+
+        <figure class="dashboard__options-container">
+          <img src="images/icon-folder.svg" alt="Folder" class="dashboard__options-container__img">
+        </figure>
+
+        <figure class="dashboard__options-container">
+          <img src="images/icon-upload.svg" alt="Upload" class="dashboard__options-container__img">
+        </figure>
+      </div>
+    </div>
+
+    <div class="storage">
+      <p class="storage__paragraph">You’ve used <span class="storage__paragraph__used">815 GB</span> of your storage</p>
+
+      <div class="storage__container">
+        <progress class="storage__container-progress" max="100" value="80"></progress>
+
+        <div class="storage__container-limits">
+          <p class="storage__container-limits__min">0 GB</p>
+          <p class="storage__container-limits__max">1000 GB</p>
+        </div>
+      </div>
+
+      <div class="storage__left">
+        <p class="storage__left-text"><span class="storage__left-text__number">185</span> GB LEFT</p>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+    <p>Coded by <a href="https://github.com/EddieSantiago?tab=repositories">Eddie Santiago Delgado</a>.</p>
+  </footer>
+</body>
+</html>

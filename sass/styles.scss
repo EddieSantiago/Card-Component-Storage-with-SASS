@@ -1,0 +1,196 @@
+@use "variables";
+@use "initial";
+
+.main-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 100vh;
+
+    @media (min-width: 750px) {
+        flex-direction: row;
+        gap: 25px;
+    }
+}
+
+.dashboard, .storage{
+    background-color: variables.$dark-blue;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard{
+    height: 200px;
+    padding: 35px 30px;
+    border-radius: 10px 100px 10px 10px;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 30px;
+
+    @media (min-width: 750px){
+        width: 350px;
+        height: 200px;
+    }
+
+    &__options{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 15px;
+
+        &-container{
+            background-color: variables.$very-dark-blue;
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.storage{
+    height: 160px;
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    @media (min-width: 750px){
+        width: 540px;
+        height: 150px;
+        /* Size of Options Div - Size of Storage Div */
+        margin-top: calc(200px - 150px);
+        align-items: flex-start;
+        padding: 35px;
+    }
+
+    &__paragraph{
+        font-size: 1.1em;
+        margin-bottom: 10px;
+
+        &__used{
+            font-weight: 700;
+        }
+
+        @media (min-width: 750px){
+            font-size: 1.2em;
+        }
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-progress{
+            appearance: none;
+            width: 260px;
+            height: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+
+            @media (min-width: 750px){
+                width: 460px;
+            }
+            
+
+            &::-webkit-progress-value {
+                border-radius: 10px;
+                background-image: linear-gradient(to right, variables.$gradient-progress);
+            }
+              
+            &::-webkit-progress-bar {
+                background-color: variables.$very-dark-blue;
+                padding: 3px;
+            }
+
+            /* Circle White */
+            &::after{
+                content: "";
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border-radius: 50%;
+                position: absolute;
+                top: 5px;
+                right: 55px;
+
+                @media (min-width: 750px){
+                    right: 95px;
+                }
+            }
+        }
+
+        &-limits{
+            width: 260px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 1.1em;
+
+            @media (min-width: 750px){
+                width: 460px;
+            }
+        }
+    }
+
+    &__left{
+        background-color: #fff;
+        width: 180px;
+        height: 75px;
+        position: absolute;
+        bottom: -40px;
+        border-radius: 10px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 750px){
+            height: 70px;
+            top: -50px;
+            bottom: 0;
+            right: 40px;
+            border-end-end-radius: 0px;
+
+            /* Create a After Element (Triangule) */
+
+            &::after{
+                content: "";
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                position: absolute;
+                bottom: -30px;
+                clip-path: polygon(100% 100%, 0 0, 100% 0);
+                right: 0px;
+            }
+        }
+
+        &-text{
+            font-size: 1.2em;
+            color: variables.$very-dark-blue;
+            font-weight: 400;
+    
+            &__number{
+                font-size: 2em;
+                font-weight: 700;
+
+                @media (min-width: 750px){
+                    font-size: 2.2em;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

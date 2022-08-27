@@ -1,0 +1,26 @@
+@use "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    font-family: variables.$font;
+    background: {
+        image: url("/images/bg-mobile.png");
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
+    color: variables.$pale-blue;
+    min-height: 100vh;
+
+    @media (min-width: 750px){
+        background-image: url("/images/bg-desktop.png");
+    }
+}
